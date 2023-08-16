@@ -96,8 +96,16 @@ h2{
     background-color: #40f99b;
     width:290px;
     height: 50px;
-    border-radius: 0px 15px 0px 15px;
-    font-size: 30px;
+    border-radius: 0px 18px 0px 18px;
+    font-size: 28px;
     font-weight: 800;
+    color: #f5fbef;
+    cursor: pointer;
+    transition: 205ms;
+}
+
+.especialidade:hover{
+    border-radius: 18px;
+    background-color: #2edb85;
     color: #f5fbef;
 }
