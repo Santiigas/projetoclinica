@@ -9,3 +9,16 @@
     font-family:'Montserrat', sem serifa;
     text-decoration: none;
 }
+
+body{
+    background-color: #f5fbef
+}
+
+header{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
