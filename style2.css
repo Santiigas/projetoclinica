@@ -22,3 +22,10 @@ header{
     align-items: center;
     gap: 5px;
 }
+
+.cadatro{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
