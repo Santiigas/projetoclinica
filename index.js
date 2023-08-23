@@ -5,6 +5,7 @@ const sexoInput = document.querySelector('#sexo')
 const cpfInput = document.querySelector("#cpf")
 
 //Mascara do CPF
+
 cpfInput.addEventListener('keypress', () => {
     let cpflength = cpfInput.value.length
 
@@ -19,6 +20,7 @@ cpfInput.addEventListener('keypress', () => {
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
 
+    /*
     if(nomeInput.value === ""){
         alert("Por favor, preencha o seu nome");
         return;
@@ -27,25 +29,26 @@ form.addEventListener('submit', (event) =>{
     if(dataNascimentoInput.value === ""){
         alert("Por favor, preencha a data de nascimento");
         return;
-    }
+    }*/
 
-    if(!validaCPF(cpfInput)){
-        alert('CPF invalido')
+    if(validaCPF(cpfInput) === true){
+        alert("Invalido")
         return;
     }
 
+    /*
     if(sexoInput.value === ""){
         alert('Preencha o sexo')
         return;
-    }
+    }*/
 
     form.submit();
-    alert("Eviado!")
+    alert("Enviado!")
 })
 
-function validaCPF(cpf = 0){
+function validaCPF(cpf){
     console.log(cpf)
-    cpf = cpf.replace(/\.|-/g,"");
+    //cpf = cpf.replace(/\.|-/g,"");
 
     let soma = 0;
     soma += cpf[0] * 10;
@@ -60,8 +63,6 @@ function validaCPF(cpf = 0){
     soma = (soma * 10) % 11;
     if(soma == 10 || soma == 11)
         soma = 0;
-
-    console.log("Primero d: "+soma);
 
     if(soma != cpf[9])
         return false;
