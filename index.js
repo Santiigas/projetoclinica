@@ -4,8 +4,17 @@ const dataNascimentoInput = document.querySelector('#data_nascimento')
 const sexoInput = document.querySelector('#sexo')
 const cpfInput = document.querySelector("#cpf")
 
-//Mascara do CPF
 
+//Mascara data
+dataNascimentoInput.addEventListener('keypress', () => {
+    let dataNascimentolength = dataNascimentoInput.value.length
+
+    if(dataNascimentolength === 2 || dataNascimentolength === 5){
+        dataNascimentoInput.value += '/'
+    } 
+})
+
+//Mascara do CPF
 cpfInput.addEventListener('keypress', () => {
     let cpflength = cpfInput.value.length
 
@@ -19,20 +28,14 @@ cpfInput.addEventListener('keypress', () => {
 
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
-
     /*
-    if(nomeInput.value === ""){
+    if(validaNome(nomeInput.value) === false){
         alert("Por favor, preencha o seu nome");
         return;
-    }
+    }*/
     
     if(dataNascimentoInput.value === ""){
         alert("Por favor, preencha a data de nascimento");
-        return;
-    }*/
-
-    if(validaCPF(cpfInput) === true){
-        alert("Invalido")
         return;
     }
 
@@ -40,15 +43,21 @@ form.addEventListener('submit', (event) =>{
     if(sexoInput.value === ""){
         alert('Preencha o sexo')
         return;
+    }
+
+    const cpfValue = cpfInput.value.replace(/\.|-/g,"")
+    if(validaCPF(cpfValue) === false){
+        alert("Invalido")
+        return;
     }*/
 
+
     form.submit();
+    console.log(dataNascimentoInput.value)
     alert("Enviado!")
 })
 
 function validaCPF(cpf){
-    console.log(cpf)
-    //cpf = cpf.replace(/\.|-/g,"");
 
     let soma = 0;
     soma += cpf[0] * 10;
@@ -87,3 +96,26 @@ function validaCPF(cpf){
 
     return true;
 } 
+
+function validaNome(nome){
+
+    if(nome.trim() === ""){
+        console.log('Nome vazio')
+        return false
+    }
+
+    var padrao = /^[a-zà-ú]+(?: [a-zà-ú]+)*$/i;
+
+    if(!padrao.test(nome )){
+        console.log("Nome possui caracteres inválidos ou é vazio")
+        return false
+     }else{
+        console.log("Nome Ok!")
+        return true
+     }
+}
+
+function validaData(data){
+    if ()
+
+}

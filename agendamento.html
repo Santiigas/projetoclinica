@@ -14,16 +14,17 @@
     </header>
     <form id="form">
         <label for="name">Nome completo</label>
-        <input type="text" id="name">
+        <input type="text" id="name" autocomplete="off">
 
         <label for="data_nascimento">Data de nascimento</label>
-        <input type="date" id="data_nascimento">
+        <input type="text" id="data_nascimento" autocomplete="off"
+        maxlength="10">
 
         <label for="sexo">Sexo</label>
         <select name="job" id="sexo">
-            <option value="">Informe seu sexo</option>
-            <option value="">Masculino</option>
-            <option value="">Feminino</option>
+            <option value=""></option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
         </select>
 
         <label for="cpf">Informe seu CPF</label>
