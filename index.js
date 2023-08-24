@@ -34,7 +34,8 @@ form.addEventListener('submit', (event) =>{
         return;
     }*/
     
-    if(dataNascimentoInput.value === ""){
+    const dataNascimentoInputValue = dataNascimentoInput.value.replace(/\/|-/g,"")
+    if(validaData(dataNascimentoInputValue) === false){
         alert("Por favor, preencha a data de nascimento");
         return;
     }
@@ -116,6 +117,5 @@ function validaNome(nome){
 }
 
 function validaData(data){
-    if ()
-
+    return /^\d+$/.test(data)
 }
