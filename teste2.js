@@ -1,6 +1,10 @@
-const data = "08042003"
+const data = "31122024"
 
 function VerificaData(data){
+
+    const date = new Date();
+    var anoatual = date.getFullYear();
+
     var mes = data[2] + data[3]
     var mesvalue = parseInt(mes)
     var dia = data[0] + data[1]
@@ -24,11 +28,10 @@ function VerificaData(data){
             console.log('Errado')
             return false
         }
-    } else{
+    } else if((anovalue <= anoatual) === false){
         console.log('Errado')
         return false
     }
-
     console.log('Tudo certo')
 }
 
