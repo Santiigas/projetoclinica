@@ -3,6 +3,7 @@ const nomeInput = document.querySelector('#name')
 const dataNascimentoInput = document.querySelector('#data_nascimento')
 const sexoInput = document.querySelector('#sexo')
 const cpfInput = document.querySelector("#cpf")
+const telefoneInput = document.querySelector("#telefone")
 
 
 //Mascara data
@@ -25,6 +26,20 @@ cpfInput.addEventListener('keypress', () => {
     }
 })
 
+//Mascara do telefone
+telefoneInput.addEventListener('keypress', () => {
+    let telefonelength = telefoneInput.value.length
+
+    if(telefonelength === 0 ){
+        telefoneInput.value += '('
+    } else if (telefonelength === 3){
+        telefoneInput.value += ') '
+    } else if(telefonelength === 5){
+        telefoneInput.value += ' '
+    } else if(telefonelength ===  10){
+        telefoneInput.value += '-'
+    }
+})
 
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
