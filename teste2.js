@@ -1,11 +1,13 @@
-const data = "04302023"
+const data = "29022004"
 
 function VerificaData(data){
     
     var dia = data[0] + data[1]
     var diavalue = parseInt(dia)
+
     var mes = data[2] + data[3]
     var mesvalue = parseInt(mes)
+
     var ano = data[4] + data[5] + data[6] + data[7]
     var anovalue = parseInt(ano)
 
@@ -23,15 +25,26 @@ function VerificaData(data){
                 return false
             }
         } else if(mesvalue === 2){
-            if((diavalue >= 1 && diavalue <=29) === false){
-                console.log('Errado')
-                return false
+            if(anoBissexto() === false){
+                if((diavalue >= 1 && diavalue <=28) === false){
+                    console.log('Errado')
+                    return false
+                }
+            } else if(anoBissexto() === true){
+                if((diavalue >= 1 && diavalue <=29) === false){
+                    console.log('Errado')
+                    return false
+                }
             }
+        } else{
+            console.log('errado')
+            return false
         }
         
-        console.log('Tudo certo') 
+        console.log('Tudo certo mes') 
     }
 
+    
     function VerificarAno(){
         const date = new Date();
         var anoatual = date.getFullYear();
@@ -42,33 +55,33 @@ function VerificaData(data){
         var dataAtual = diaatual + (mesatual + 1) + anoatual
 
         if(dataUsuario > dataAtual){
-            console.log('Errado')
+            console.log('Errado ano')
             return false
         }
         
-        console.log('Tudo certo')
+        console.log('Tudo certo ano')
     }
+
+    function anoBissexto() {
+    
+        if ((anovalue % 4) === 0){
+            if((anovalue % 100) != 0){
+                return true
+            } else if((anovalue % 400) != 0){
+                return false
+            } else{
+                return true
+            }
+        } else{
+            return false
+        }
+    
+    }
+
+    verificaMes()
+    anoBissexto()
 }
 
 
 VerificaData(data)
 
-const ano = 2000
-
-function anoBissexto(ano) {
-    
-    if ((ano % 4) === 0){
-        if((ano % 100) != 0){
-            console.log('Bissexto')
-        } else if((ano % 400) != 0){
-            console.log('Não é bissexto')
-        } else{
-            console.log('Bissexto')
-        }
-    }else{
-        console.log('Não é bissexto')
-    }
-
-}
-
-anoBissexto(ano)
