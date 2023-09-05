@@ -1,10 +1,8 @@
-const data = "31122024"
+const data = "04322023"
 
 function VerificaData(data){
 
-    const date = new Date();
-    var anoatual = date.getFullYear();
-
+    //se dias e meses estão corretos
     var mes = data[2] + data[3]
     var mesvalue = parseInt(mes)
     var dia = data[0] + data[1]
@@ -28,12 +26,45 @@ function VerificaData(data){
             console.log('Errado')
             return false
         }
-    } else if((anovalue <= anoatual) === false){
+    } 
+
+    //se a data é maior que a atual
+    const date = new Date();
+    var anoatual = date.getFullYear();
+    var diaatual = date.getDate()
+    var mesatual = date.getMonth()
+
+    var dataUsuario = diavalue + mesvalue + anovalue
+    var dataAtual = diaatual + (mesatual + 1) + anoatual
+
+    if(dataUsuario > dataAtual){
         console.log('Errado')
         return false
     }
+    
     console.log('Tudo certo')
+
 }
 
 
-VerificaData(data)
+//VerificaData(data)
+
+const ano = 2000
+
+function anoBissexto(ano) {
+    
+    if ((ano % 4) === 0){
+        if((ano % 100) != 0){
+            console.log('Bissexto')
+        } else if((ano % 400) != 0){
+            console.log('Não é bissexto')
+        } else{
+            console.log('Bissexto')
+        }
+    }else{
+        console.log('Não é bissexto')
+    }
+
+}
+
+anoBissexto(ano)
