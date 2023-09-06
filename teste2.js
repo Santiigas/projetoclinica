@@ -1,4 +1,4 @@
-const data = "29022004"
+const data = "04082023"
 
 function VerificaData(data){
     
@@ -47,18 +47,26 @@ function VerificaData(data){
     
     function VerificarAno(){
         const date = new Date();
-        var anoatual = date.getFullYear();
-        var diaatual = date.getDate()
-        var mesatual = date.getMonth()
+        let anoatual = date.getFullYear()
+        let diaatual = date.getDate()
+        let mesatual = date.getMonth()
 
-        var dataUsuario = diavalue + mesvalue + anovalue
-        var dataAtual = diaatual + (mesatual + 1) + anoatual
-
-        if(dataUsuario > dataAtual){
-            console.log('Errado ano')
+        if(anovalue <= anoatual){
+            if(anovalue === anoatual){
+                if(mesvalue <= mesatual){
+                    console.log("pct ainda n nasceu 2")
+                    return false
+                } else{
+                    
+                }
+            } else{
+                console.log('Ano abaixo')
+            }
+        } else{
+            console.log('pct ainda n nasceu 1')
             return false
         }
-        
+
         console.log('Tudo certo ano')
     }
 
@@ -78,8 +86,8 @@ function VerificaData(data){
     
     }
 
+    VerificarAno()
     verificaMes()
-    anoBissexto()
 }
 
 
