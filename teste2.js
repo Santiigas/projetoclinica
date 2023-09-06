@@ -1,4 +1,4 @@
-const data = "04082023"
+const data = "05092023"
 
 function VerificaData(data){
     
@@ -51,23 +51,18 @@ function VerificaData(data){
         let diaatual = date.getDate()
         let mesatual = date.getMonth()
 
-        if(anovalue <= anoatual){
-            if(anovalue === anoatual){
-                if(mesvalue <= mesatual){
-                    console.log("pct ainda n nasceu 2")
-                    return false
-                } else{
-                    
-                }
-            } else{
-                console.log('Ano abaixo')
-            }
-        } else{
-            console.log('pct ainda n nasceu 1')
-            return false
+        if(anovalue > anoatual){
+            console.log('Pacinete n nasceu // ano')
+            return false    
+        } else if(anovalue === anoatual && mesvalue >= mesatual){
+            console.log('Pacinete n nasceu // mes')
+            return false    
+        } else if(anovalue === anoatual && mesvalue <= mesatual && diavalue > diaatual){
+            console.log('Pacinete n nasceu // dia')
+            return false    
         }
 
-        console.log('Tudo certo ano')
+        console.log("tudo certo ano")
     }
 
     function anoBissexto() {
@@ -86,8 +81,9 @@ function VerificaData(data){
     
     }
 
-    VerificarAno()
     verificaMes()
+    VerificarAno()
+
 }
 
 
