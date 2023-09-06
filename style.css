@@ -109,3 +109,11 @@ h2{
     background-color: #2edb85;
     color: #f5fbef;
 }
+
+.idade{
+    color: #f5fbef;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    padding-bottom: 1px;
+}
