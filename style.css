@@ -67,7 +67,7 @@ main{
 }
 
 h1{
-    padding-top: 30px;
+    padding-top: 10px;
     font-size: 25px;
     font-weight: 800;
     color: #159b57;
@@ -95,7 +95,7 @@ h2{
     align-items: center;
     background-color: #40f99b;
     width:290px;
-    height: 50px;
+    height: 55px;
     border-radius: 0px 18px 0px 18px;
     font-size: 28px;
     font-weight: 800;
