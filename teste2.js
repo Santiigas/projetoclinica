@@ -1,7 +1,8 @@
-const data = "05092023"
+const data = "31132020"
 
 function VerificaData(data){
     
+    //pegar data/juntar/e transformar em inteiro
     var dia = data[0] + data[1]
     var diavalue = parseInt(dia)
 
@@ -12,9 +13,13 @@ function VerificaData(data){
     var anovalue = parseInt(ano)
 
     function verificaMes(){
-        meses31 = [1, 3, 5, 7, 8, 10, 12]
-        meses30 = [4, 6, 9, 11]
+        //arrys com os meses do ano
+        const meses31 = [1, 3, 5, 7, 8, 10, 12]
+        const meses30 = [4, 6, 9, 11]
+
+        //cada if verifica se o mes está dentro de uma das listas
         if(meses31.indexOf(mesvalue) > -1){
+            //depois verifica se o dia é valido
             if((diavalue >= 1 && diavalue <=31) === false){
                 console.log('Errado')
                 return false
@@ -49,15 +54,15 @@ function VerificaData(data){
         const date = new Date();
         let anoatual = date.getFullYear()
         let diaatual = date.getDate()
-        let mesatual = date.getMonth()
+        let mesatual = date.getMonth() +1;
 
         if(anovalue > anoatual){
             console.log('Pacinete n nasceu // ano')
             return false    
-        } else if(anovalue === anoatual && mesvalue >= mesatual){
+        } else if(anovalue === anoatual && mesvalue > mesatual){
             console.log('Pacinete n nasceu // mes')
             return false    
-        } else if(anovalue === anoatual && mesvalue <= mesatual && diavalue > diaatual){
+        } else if(anovalue === anoatual && mesvalue === mesatual && diavalue > diaatual){
             console.log('Pacinete n nasceu // dia')
             return false    
         }
@@ -66,7 +71,7 @@ function VerificaData(data){
     }
 
     function anoBissexto() {
-    
+        //autoexplicativo
         if ((anovalue % 4) === 0){
             if((anovalue % 100) != 0){
                 return true
