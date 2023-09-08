@@ -51,11 +51,13 @@ function VerificaData(data){
 
     
     function VerificarAno(){
+        //datas atuais
         const date = new Date();
         let anoatual = date.getFullYear()
         let diaatual = date.getDate()
         let mesatual = date.getMonth() +1;
 
+        //verifica se a data de nascimento é acima da data atual 
         if(anovalue > anoatual){
             console.log('Pacinete n nasceu // ano')
             return false    
