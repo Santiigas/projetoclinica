@@ -1,4 +1,4 @@
-import {validaCPF, validaData, validaNome} from './Modulo.js/validacaodedados'
+import {validaCPF,validaData,validaNome} from './Modulo.js/validacaodedados.js'
 
 const form = document.querySelector("#form")
 const nomeInput = document.querySelector('#name')
@@ -51,13 +51,13 @@ form.addEventListener('submit', (event) =>{
         alert("Por favor, preencha o seu nome");
         return;
     }
-    
+    /*
     const dataNascimentoInputValue = dataNascimentoInput.value.replace(/\/|-/g,"")
     if(validaData(dataNascimentoInputValue) === false){
-        alert("Por favor, preencha a data de nascimento");
+        alert("Data invalida");
         return;
     }
-
+    
     if(sexoInput.value === ""){
         alert('Preencha o sexo')
         return;
@@ -68,8 +68,7 @@ form.addEventListener('submit', (event) =>{
         alert("Invalido")
         return;
     }
-
+    */
     form.submit();
-    console.log(dataNascimentoInput.value)
     alert("Enviado!")
 })
