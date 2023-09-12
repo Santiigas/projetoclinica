@@ -1,4 +1,44 @@
-function VerificaData(data){
+export function validaCPF(cpf){
+
+    let soma = 0;
+    soma += cpf[0] * 10;
+    soma += cpf[1] * 9;
+    soma += cpf[2] * 8;
+    soma += cpf[3] * 7;
+    soma += cpf[4] * 6;
+    soma += cpf[5] * 5;
+    soma += cpf[6] * 4;
+    soma += cpf[7] * 3;
+    soma += cpf[8] * 2;
+    soma = (soma * 10) % 11;
+    if(soma == 10 || soma == 11)
+        soma = 0;
+
+    if(soma != cpf[9])
+        return false;
+
+    soma = 0;
+    soma += cpf[0] * 11;
+    soma += cpf[1] * 10;
+    soma += cpf[2] * 9;
+    soma += cpf[3] * 8;
+    soma += cpf[4] * 7;
+    soma += cpf[5] * 6;
+    soma += cpf[6] * 5;
+    soma += cpf[7] * 4;
+    soma += cpf[8] * 3;
+    soma += cpf[9] * 2;
+    soma = (soma * 10) % 11;
+    if(soma == 10 || soma == 11)
+        soma = 0;
+
+    if(soma != cpf[10])
+        return false;
+
+    return true;
+} 
+
+export function validaData(data){
     
     //pegar data/juntar/e transformar em inteiro
     var dia = data[0] + data[1]
@@ -38,10 +78,9 @@ function VerificaData(data){
         } else{
             return false
         }
-        
+
         return true
     }
-
     
     function VerificarAno(){
         //datas atuais
@@ -75,14 +114,22 @@ function VerificaData(data){
         } else{
             return false
         }
-    
     }
-
     verificaMes()
     VerificarAno()
-
 }
 
+export function validaNome(nome){
 
-VerificaData(data)
+    if(nome.trim() === ""){
+        return false
+    }
 
+    var padrao = /^[a-zà-ú]+(?: [a-zà-ú]+)*$/i;
+
+    if(!padrao.test(nome )){
+        return false
+     }else{
+        return true
+    }
+}
