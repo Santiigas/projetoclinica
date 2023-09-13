@@ -59,27 +59,27 @@ export function validaData(data){
         if(meses31.indexOf(mesvalue) > -1){
             //depois verifica se o dia é valido
             if((diavalue >= 1 && diavalue <=31) === false){
-                return false
+                return false;
             }
         } else if(meses30.indexOf(mesvalue) > -1){
             if((diavalue >= 1 && diavalue <=30) === false) {
-                return false
+                return false;
             }
         } else if(mesvalue === 2){
             if(anoBissexto() === false){
                 if((diavalue >= 1 && diavalue <=28) === false){
-                    return false
+                    return false;
                 }
             } else if(anoBissexto() === true){
                 if((diavalue >= 1 && diavalue <=29) === false){
-                    return false
+                    return false;
                 }
             }
         } else{
-            return false
+            return false;
         }
 
-        return true
+        return true;
     }
     
     function VerificarAno(){
@@ -91,32 +91,31 @@ export function validaData(data){
 
         //verifica se a data de nascimento é acima da data atual 
         if(anovalue > anoatual){
-            return false    
+            return false;    
         } else if(anovalue === anoatual && mesvalue > mesatual){
-            return false    
+            return false;    
         } else if(anovalue === anoatual && mesvalue === mesatual && diavalue > diaatual){
-            return false    
+            return false;    
         }
 
-        return true
+        return true;
     }
 
     function anoBissexto() {
         //autoexplicativo
         if ((anovalue % 4) === 0){
             if((anovalue % 100) != 0){
-                return true
+                return true;
             } else if((anovalue % 400) != 0){
-                return false
+                return false;
             } else{
-                return true
+                return true;
             }
         } else{
-            return false
+            return false;
         }
     }
-    verificaMes()
-    VerificarAno()
+    return verificaMes() && VerificarAno
 }
 
 export function validaNome(nome){

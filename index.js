@@ -1,4 +1,5 @@
 import {validaCPF,validaData,validaNome} from './Modulo.js/validacaodedados.js'
+import {MascaraData, MascaraCPF, MascaraTelefone} from './Modulo.js/mascaras.js'
 
 const form = document.querySelector("#form")
 const nomeInput = document.querySelector('#name')
@@ -7,62 +8,34 @@ const sexoInput = document.querySelector('#sexo')
 const cpfInput = document.querySelector("#cpf")
 const telefoneInput = document.querySelector("#telefone")
 
-
-//Mascara data
-dataNascimentoInput.addEventListener('keypress', () => {
-    let dataNascimentolength = dataNascimentoInput.value.length
-
-    if(dataNascimentolength === 2 || dataNascimentolength === 5){
-        dataNascimentoInput.value += '/'
-    } 
-})
-
-//Mascara do CPF
-cpfInput.addEventListener('keypress', () => {
-    let cpflength = cpfInput.value.length
-
-    if(cpflength === 3 || cpflength === 7){
-        cpfInput.value += '.'
-    } else if (cpflength === 11){
-        cpfInput.value += '-'
-    }
-})
-
-//Mascara do telefone
-telefoneInput.addEventListener('keypress', () => {
-    let telefonelength = telefoneInput.value.length
-
-    if(telefonelength === 0 ){
-        telefoneInput.value += '('
-    } else if (telefonelength === 3){
-        telefoneInput.value += ') '
-    } else if(telefonelength === 5){
-        telefoneInput.value += ' '
-    } else if(telefonelength ===  10){
-        telefoneInput.value += '-'
-    }
-})
-
+MascaraData(dataNascimentoInput)
+MascaraCPF(cpfInput)
+MascaraTelefone(telefoneInput)
 
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
-    
+    /*
     if(validaNome(nomeInput.value) === false){
         alert("Por favor, preencha o seu nome");
         return;
     }
-    /*
-    const dataNascimentoInputValue = dataNascimentoInput.value.replace(/\/|-/g,"")
-    if(validaData(dataNascimentoInputValue) === false){
+    */
+    const dataNascimentoInputValue = dataNascimentoInput.value.replace(/\/|-/g,"").trim();
+    if(dataNascimentoInputValue === ""){ 
+        alert("Prencha a data");
+        return;
+    } 
+
+    if(validaData(dataNascimentoInputValue) === true){
         alert("Data invalida");
         return;
     }
-    
+
+    /*
     if(sexoInput.value === ""){
         alert('Preencha o sexo')
         return;
-    }
-
+    
     const cpfValue = cpfInput.value.replace(/\.|-/g,"")
     if(validaCPF(cpfValue) === false){
         alert("Invalido")
