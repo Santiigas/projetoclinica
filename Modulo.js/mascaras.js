@@ -22,7 +22,6 @@ export function MascaraCPF(cpfInput){
     })
 }
 
-
 //Mascara do telefone
 export function MascaraTelefone(telefoneInput){
     telefoneInput.addEventListener('keypress', () => {

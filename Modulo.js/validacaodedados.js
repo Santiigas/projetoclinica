@@ -79,7 +79,7 @@ export function validaData(data){
             return false;
         }
 
-        return true;
+        return true
     }
     
     function VerificarAno(){
@@ -98,7 +98,7 @@ export function validaData(data){
             return false;    
         }
 
-        return true;
+        return true
     }
 
     function anoBissexto() {
@@ -115,7 +115,8 @@ export function validaData(data){
             return false;
         }
     }
-    return verificaMes() && VerificarAno
+
+    return verificaMes() && VerificarAno()
 }
 
 export function validaNome(nome){
