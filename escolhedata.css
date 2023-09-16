@@ -124,7 +124,7 @@ h2{
     gap: 18px;
 }
 
-.dia_vaga{  
+.quadro_dia{  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,7 +149,11 @@ h2{
     height: 45px;
     border-radius: 0px 0px 0px 18px;
     font-size: 28px;
-    font-weight: 800;
     color: #f5fbef;
     cursor: pointer;
+}
+
+.data{
+    font-size: 22px;
+    font-weight: 800;
 }
