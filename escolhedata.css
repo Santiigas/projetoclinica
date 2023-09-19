@@ -80,11 +80,15 @@ h2{
     color: #159b57;
 }
 
-.dia_hora_texto{
-    font-size: 22px;
-    font-weight: 800;
-    color: #f5fbef;
+h3{
+    font-size: 13px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    color: #159b57;
+    padding-bottom: 1px;
 }
+
+
 
 .subtitulo{
     padding-top: 20px;
@@ -92,14 +96,6 @@ h2{
     font-weight: 600;
     padding-bottom: 2px;
     color: #159b57;
-}
-
-.grupo-especialidades{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: 18px;
 }
 
 .especialidade{
@@ -121,12 +117,12 @@ h2{
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
 }
 
 .quadro_dia{  
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     background-color: #40f99b;
@@ -139,12 +135,12 @@ h2{
     cursor: pointer;
 }
 
-.detalhe1{
+.data_medico{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #30ce7f;
+    background-color: #35d887;
     width:80px;
     height: 45px;
     border-radius: 0px 0px 0px 18px;
@@ -153,7 +149,40 @@ h2{
     cursor: pointer;
 }
 
+.dia_e_horario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #40f99b;
+    width:280px;
+    border-radius: 0px 18px 0px 0px;
+    height: 45px;
+    font-size: 28px;
+    color: #f5fbef;
+    cursor: pointer;
+}
+
+
 .data{
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 800;
+}
+
+.ver_mais{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #40f99b;
+    width:130px;
+    height: 50px;
+    color: #f5fbef;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 100ms;
+}
+
+.ver_mais:hover{   
+    background-color: #35d887;
 }
