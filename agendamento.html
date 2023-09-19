@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="estilos/agendamento.css">
     <script src="index.js" type="module"></script>
 </head>
 <body>
@@ -12,30 +12,41 @@
         <h1>Agendando consulta para</h1>
         <h2>OTORRINO</h2>
     </header>
-    <form id="form">
-        <label for="name">Nome completo</label>
-        <input type="text" id="name" autocomplete="off">
-
-        <label for="data_nascimento">Data de nascimento</label>
-        <input type="text" id="data_nascimento" autocomplete="off"
-        maxlength="10">
-
-        <label for="sexo">Sexo</label>
-        <select name="job" id="sexo">
-            <option value=""></option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-        </select>
-
-        <label for="cpf">Informe seu CPF</label>
-        <input type="text" id="cpf" autocomplete="off"
-        maxlength="14" placeholder="000.000.000-00">
-
-        <label for="telefone">Telefone para contato</label>
-        <input type="text" id="telefone" autocomplete="off"
-        maxlength="15" placeholder="(00) 0 0000-0000">
-
-        <button type="submit">Enviar</button>
-    </form>
+    <main>
+        <div class="retangulo1">
+            <div class="retangulo2">
+                <form id="form">
+                    <div class="dados_entrada">
+                        <label for="name">Nome completo</label>
+                        <input type="text" id="name" autocomplete="off">
+                    </div>
+                    <div class="dados_entrada">
+                        <label for="data_nascimento">Data de nascimento</label>
+                        <input type="text" id="data_nascimento" autocomplete="off"
+                        maxlength="10">
+                    </div>
+                    <div class="dados_entrada">
+                        <label for="sexo">Sexo</label>
+                        <select name="job" type="text" id="sexo">
+                            <option value=""></option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                        </select>
+                    </div>
+                    <div class="dados_entrada">
+                        <label for="cpf">Informe seu CPF</label>
+                        <input type="text" id="cpf" autocomplete="off"
+                        maxlength="14" placeholder="000.000.000-00">
+                    </div>
+                    <div class="dados_entrada">
+                        <label for="telefone">Telefone para contato</label>
+                        <input type="text" id="telefone" autocomplete="off"
+                        maxlength="15" placeholder="(00) 0 0000-0000">
+                    </div>
+                    <button type="submit">Agendar</button>
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
