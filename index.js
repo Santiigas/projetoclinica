@@ -1,6 +1,7 @@
 import {validaCPF,validaData,validaNome} from './Modulo.js/validacaodedados.js'
 import {MascaraData, MascaraCPF, MascaraTelefone} from './Modulo.js/mascaras.js'
 
+//informações do paciente
 const form = document.querySelector("#form")
 const nomeInput = document.querySelector('#name')
 const dataNascimentoInput = document.querySelector('#data_nascimento')
