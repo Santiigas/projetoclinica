@@ -175,7 +175,7 @@ h3{
     justify-content: center;
     align-items: center;
     background-color: #40f99b;
-    width:130px;
+    width:200px;
     height: 50px;
     color: #f5fbef;
     cursor: pointer;
@@ -199,4 +199,22 @@ select{
     padding: 8px;
     border: 1px solid #40f99b;
     border-radius: 15px;
+}
+
+.voltar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #27b36d;
+    width:90px;
+    height: 35px;
+    color: #f5fbef;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 100ms;
+}
+
+.voltar:hover{
+    background-color: #219c5e;
 }
