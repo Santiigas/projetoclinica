@@ -89,9 +89,16 @@ h3{
 }
 
 
-
 .subtitulo{
-    padding-top: 20px;
+    padding-top: 45px;
+    font-size: 19px;
+    font-weight: 600;
+    padding-bottom: 2px;
+    color: #159b57;
+}
+
+.subtitulo2{
+    padding-top: 15px;
     font-size: 19px;
     font-weight: 600;
     padding-bottom: 2px;
@@ -155,7 +162,7 @@ h3{
     justify-content: center;
     align-items: center;
     background-color: #40f99b;
-    width:280px;
+    width:240px;
     border-radius: 0px 18px 0px 0px;
     height: 45px;
     font-size: 28px;
@@ -175,16 +182,17 @@ h3{
     justify-content: center;
     align-items: center;
     background-color: #40f99b;
-    width:200px;
+    width:140px;
     height: 50px;
     color: #f5fbef;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 8px;
     transition: 100ms;
 }
 
 .ver_mais:hover{   
     background-color: #35d887;
+    width:180px;
 }
 
 .dados_entrada{
@@ -194,8 +202,9 @@ h3{
     justify-content: center;
 }
 
+
 select{
-    width: 320px;
+    width: 300px;
     padding: 8px;
     border: 1px solid #40f99b;
     border-radius: 15px;
