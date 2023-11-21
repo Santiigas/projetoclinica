@@ -1,0 +1,230 @@
+@charset "UFT-8";
+@import url('https://fonts.googleapis.com/css2? family= Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600; 0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900 & display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family:'Montserrat', sem serifa;
+    text-decoration: none;
+}
+
+body{
+    background-color: #f5fbef
+}
+
+header{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+img{
+    width: 70px;
+}
+
+p{
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    color: #40f99b;
+}
+
+/*--------- bloco de especialidade ---------*/
+
+main{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.retangulo1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #40f99b;
+    width:400px;
+    height: 450px;
+    border-radius: 30px;
+}
+
+.retangulo2{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #f5fbef;
+    width:392px;
+    height: 442px;
+    border-radius: 25px;
+}
+
+h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-weight: 800;
+    color: #159b57;
+}
+
+h2{
+    font-size: 15px;
+    font-weight: 600;
+    color: #159b57;
+}
+
+h3{
+    font-size: 13px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    color: #159b57;
+    padding-bottom: 1px;
+}
+
+
+.subtitulo{
+    padding-top: 45px;
+    font-size: 19px;
+    font-weight: 600;
+    padding-bottom: 2px;
+    color: #159b57;
+}
+
+.subtitulo2{
+    padding-top: 15px;
+    font-size: 19px;
+    font-weight: 600;
+    padding-bottom: 2px;
+    color: #159b57;
+}
+
+.especialidade{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #40f99b;
+    width:290px;
+    height: 55px;
+    border-radius: 18px 18px 18px 18px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #f5fbef;
+}
+
+.dias_atendimento{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+}
+
+.quadro_dia{  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #40f99b;
+    width:330px;
+    height: 45px;
+    border-radius: 0px 18px 0px 18px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #f5fbef;
+    cursor: pointer;
+}
+
+.data_medico{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #35d887;
+    width:80px;
+    height: 45px;
+    border-radius: 0px 0px 0px 18px;
+    font-size: 28px;
+    color: #f5fbef;
+    cursor: pointer;
+}
+
+
+.dia_e_horario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #40f99b;
+    width:240px;
+    border-radius: 0px 18px 0px 0px;
+    height: 45px;
+    font-size: 28px;
+    color: #f5fbef;
+    cursor: pointer;
+}
+
+
+.data{
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.ver_mais{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #40f99b;
+    width:140px;
+    height: 50px;
+    color: #f5fbef;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 100ms;
+}
+
+.ver_mais:hover{   
+    background-color: #35d887;
+    width:180px;
+}
+
+.dados_entrada{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+select{
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #40f99b;
+    border-radius: 15px;
+}
+
+.voltar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #27b36d;
+    width:90px;
+    height: 35px;
+    color: #f5fbef;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 100ms;
+}
+
+.voltar:hover{
+    background-color: #219c5e;
+}
