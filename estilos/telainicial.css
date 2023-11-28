@@ -44,6 +44,10 @@ main{
     align-items: center;
 }
 
+.informativo{
+    
+}
+
 .retangulo1{
     display: flex;
     flex-direction: column;
@@ -95,7 +99,7 @@ h2{
     align-items: center;
     background-color: #40f99b;
     width:290px;
-    height: 55px;
+    height: 43px;
     border-radius: 0px 18px 0px 18px;
     font-size: 28px;
     font-weight: 800;
