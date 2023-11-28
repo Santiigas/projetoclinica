@@ -28,10 +28,16 @@ img{
 }
 
 p{
-    font-size: 9px;
+    text-align: justify;
+    font-size: 12px;
     font-weight: 400;
-    letter-spacing: 10px;
     color: #40f99b;
+}
+
+.frase{
+    letter-spacing: 10px;
+    font-size: 10px;
+    font-weight: 400;
 }
 
 /*--------- bloco de especialidade ---------*/
@@ -44,9 +50,6 @@ main{
     align-items: center;
 }
 
-.informativo{
-    
-}
 
 .retangulo1{
     display: flex;
@@ -75,13 +78,7 @@ h1{
     font-size: 25px;
     font-weight: 800;
     color: #159b57;
-}
-
-h2{
-    font-size: 20px;
-    font-weight: 600;
-    padding-bottom: 15px;
-    color: #159b57;
+    padding-bottom: 13px;
 }
 
 .grupo-especialidades{

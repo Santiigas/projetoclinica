@@ -15,28 +15,30 @@ body{
 }
 
 header{
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }
 
-header > h2{
-    padding-top: 15px;
-    width: 400px;
-    text-align: center;
-    font-size: 15px;
+.frase{
+    letter-spacing: 10px;
+    font-size: 10px;
     font-weight: 400;
     color:#40f99b;
 }
 
-header > h1{
+
+h1{
     padding-top: 15px;
     width: 400px;
     text-align: center;
     font-size: 30px;
     font-weight: 800;
     color: #159b57;
+    padding-bottom: 15px;
 }
 
 img{
