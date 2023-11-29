@@ -1,6 +1,72 @@
 import {validaCPF,validaData,validaNome} from './Modulo.js/validacaodedados.js'
 import {MascaraData, MascaraCPF, MascaraTelefone} from './Modulo.js/mascaras.js'
 
+//informações do paciente
+const form = document.querySelector("#form")
+const nomeInput = document.querySelector('#name')
+const dataNascimentoInput = document.querySelector('#data_nascimento')
+const sexoInput = document.querySelector('#sexo')
+const cpfInput = document.querySelector("#cpf")
+const telefoneInput = document.querySelector("#telefone")
+
+MascaraData(dataNascimentoInput)
+MascaraCPF(cpfInput)
+MascaraTelefone(telefoneInput)
+
+function CriaParagrafos () {
+    const p = document.createElement('p');
+    return p;
+}
+
+function alertaNaTela(mensagem){
+    const mensagem_na_tela = document.querySelector('#alerta')
+    mensagem_na_tela.innerHTML= '';
+
+    const p = CriaParagrafos();
+
+    p.innerHTML = mensagem
+    mensagem_na_tela.appendChild(p)
+}
+
+form.addEventListener('submit', (event) =>{
+    event.preventDefault();
+    
+    if(validaNome(nomeInput.value) === false){
+        alertaNaTela('Nome precisa ser preenchido!');
+        return;
+    }
+    
+    const dataNascimentoInputValue = dataNascimentoInput.value.replace(/\/|-/g,"").trim();
+    if(dataNascimentoInputValue === ""){ 
+        alertaNaTela('Data precisa ser preenchida!');
+        return;
+    } 
+
+    if(validaData(dataNascimentoInputValue) === false){
+        alertaNaTela('Data invalida!Tente novamente');
+        return;
+    }
+
+    if(sexoInput.value === ""){
+        alertaNaTela('Preencha o sexo')
+        return;
+    }
+    const cpfValue = cpfInput.value.replace(/\.|-/g,"")
+    if(validaCPF(cpfValue) === false){
+        alertaNaTela('CPF vazio ou invalido')
+        return;
+    }
+
+    if(telefoneInput.value === ""){
+        alertaNaTela('Numero vazio ou invalido')
+        return;
+    }
+    
+    form.submit();
+    alert("Enviado!")
+})
+
+
 //informacoes data
 const segunda = document.querySelector()
 const terca = document.querySelector()
@@ -37,50 +103,4 @@ sexta.addEventListener('click', function(event){
 sabado.addEventListener('click', function(event){
     const dia = 'Sabado'
     const horario = '08:00'
-})
-
-
-//informações do paciente
-const form = document.querySelector("#form")
-const nomeInput = document.querySelector('#name')
-const dataNascimentoInput = document.querySelector('#data_nascimento')
-const sexoInput = document.querySelector('#sexo')
-const cpfInput = document.querySelector("#cpf")
-const telefoneInput = document.querySelector("#telefone")
-
-MascaraData(dataNascimentoInput)
-MascaraCPF(cpfInput)
-MascaraTelefone(telefoneInput)
-
-form.addEventListener('submit', (event) =>{
-    event.preventDefault();
-    
-    if(validaNome(nomeInput.value) === false){
-        alert("Por favor, preencha o seu nome");
-        return;
-    }
-    
-    const dataNascimentoInputValue = dataNascimentoInput.value.replace(/\/|-/g,"").trim();
-    if(dataNascimentoInputValue === ""){ 
-        alert("Prencha a data");
-        return;
-    } 
-
-    if(validaData(dataNascimentoInputValue) === false){
-        alert("Data invalida");
-        return;
-    }
-
-    if(sexoInput.value === ""){
-        alert('Preencha o sexo')
-        return;
-    }
-    const cpfValue = cpfInput.value.replace(/\.|-/g,"")
-    if(validaCPF(cpfValue) === false){
-        alert("Invalido")
-        return;
-    }
-    
-    form.submit();
-    alert("Enviado!")
 })
