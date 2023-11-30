@@ -138,3 +138,8 @@ button:hover{
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+p{
+    color: #df1c1c;
+    font-weight: 600;
+}

@@ -9,15 +9,18 @@ const sexoInput = document.querySelector('#sexo')
 const cpfInput = document.querySelector("#cpf")
 const telefoneInput = document.querySelector("#telefone")
 
+//mascaras de dados
 MascaraData(dataNascimentoInput)
 MascaraCPF(cpfInput)
 MascaraTelefone(telefoneInput)
 
+//criacao de paragrafos na tela
 function CriaParagrafos () {
     const p = document.createElement('p');
     return p;
 }
 
+//funcao que mostra a mensagem na tela
 function alertaNaTela(mensagem){
     const mensagem_na_tela = document.querySelector('#alerta')
     mensagem_na_tela.innerHTML= '';
@@ -28,6 +31,7 @@ function alertaNaTela(mensagem){
     mensagem_na_tela.appendChild(p)
 }
 
+//verificacao dos dados dos formulario
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
     
@@ -62,9 +66,34 @@ form.addEventListener('submit', (event) =>{
         return;
     }
     
+
     form.submit();
     alert("Enviado!")
+
+    alert(`${nomeInput.value}`)
 })
+
+const consultaPaciente = {
+    paciente:[
+        {
+            nome: nomeInput.value,
+            dataNascimento: dataNascimentoInput.value,
+            sexo: sexoInput.value,
+            cpf: cpfInput.value,
+            telefone: telefoneInput.value,
+        }
+    ],
+    medico:[
+        {
+            medico: 'Dr. Santiago Oliveira',
+            especialidade: 'Psicologo',
+            crm: '2783',
+
+        }
+    ]
+}
+
+
 
 
 //informacoes data
