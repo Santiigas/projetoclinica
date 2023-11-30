@@ -73,6 +73,8 @@ form.addEventListener('submit', (event) =>{
     alert(`${nomeInput.value}`)
 })
 
+
+// ------------ CRUD JAVASCRIPT ------------ // 
 const consultaPaciente = {
     paciente:[
         {
@@ -88,12 +90,10 @@ const consultaPaciente = {
             medico: 'Dr. Santiago Oliveira',
             especialidade: 'Psicologo',
             crm: '2783',
-
+            rqe: true,
         }
-    ]
+    ],
 }
-
-
 
 
 //informacoes data
