@@ -78,6 +78,28 @@ h1{
     font-size: 25px;
     font-weight: 800;
     color: #159b57;
+    padding-bottom: 3px;
+}
+
+h2{
+    font-size: 13px;
+    font-weight: 800;
+    color: #000000;
+    padding-bottom: 13px;
+}
+
+.dadosnascimento{
+    padding-top: 8px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #159b57;
+    padding-bottom: 8px;
+}
+
+.dadoscpf{
+    font-size: 15px;
+    font-weight: 800;
+    color: #159b57;
     padding-bottom: 13px;
 }
 
@@ -89,23 +111,43 @@ h1{
     gap: 18px;
 }
 
-.especialidade{
+.paciente{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(162, 223, 194);
+    width:360px;
+    height: 43px;
+    border-radius:18px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #159b57;
+    cursor: pointer;
+    transition: 205ms;
+}
+
+.medica{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #40f99b;
-    width:290px;
+    width:310px;
     height: 43px;
-    border-radius: 0px 18px 0px 18px;
-    font-size: 28px;
+    border-radius:18px;
+    font-size: 25px;
     font-weight: 800;
     color: #f5fbef;
     cursor: pointer;
     transition: 205ms;
 }
 
-.especialidade:hover{
+
+
+
+
+.paciente:hover{
     border-radius: 18px;
     background-color: #2edb85;
     color: #f5fbef;
