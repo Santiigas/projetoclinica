@@ -66,34 +66,27 @@ form.addEventListener('submit', (event) =>{
         return;
     }
     
+    let pacientes = new Array();
+    //verifica se a propiedade no localstorage
+    if (localStorage.hasOwnProperty("pacientes")){
+        //recuperar os valores da propiedade pacientes no localStorage
+        //converte a string para object
+        pacientes = JSON.parse(localStorage.getItem("pacientes"))
+    }
+
+    //add um novo obejeto no arry criado
+    pacientes.push({nome: nomeInput.value, datanascimento: dataNascimentoInput.value, 
+        sexo: sexoInput.value, cpf: cpfInput.value, telefone: telefoneInput.value});
+    
+    //salva no localstorage
+    localStorage.setItem("pacientes",JSON.stringify(pacientes))
+
 
     form.submit();
     alert("Enviado!")
 
-    alert(`${nomeInput.value}`)
 })
 
-
-// ------------ CRUD JAVASCRIPT ------------ // 
-const consultaPaciente = {
-    paciente:[
-        {
-            nome: nomeInput.value,
-            dataNascimento: dataNascimentoInput.value,
-            sexo: sexoInput.value,
-            cpf: cpfInput.value,
-            telefone: telefoneInput.value,
-        }
-    ],
-    medico:[
-        {
-            medico: 'Dr. Santiago Oliveira',
-            especialidade: 'Psicologo',
-            crm: '2783',
-            rqe: true,
-        }
-    ],
-}
 
 
 //informacoes data
