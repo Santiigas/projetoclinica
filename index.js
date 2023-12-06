@@ -81,12 +81,12 @@ form.addEventListener('submit', (event) =>{
     //salva no localstorage
     localStorage.setItem("pacientes",JSON.stringify(pacientes))
 
-
     form.submit();
-    alert("Enviado!")
+
+    //envia dados para o html
+    document.getElementById("paciente").insertAdjacentHTML('beforeend', nomeInput.value);
 
 })
-
 
 
 //informacoes data
