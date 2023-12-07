@@ -83,9 +83,9 @@ form.addEventListener('submit', (event) =>{
 
     form.submit();
 
+
     //envia dados para o html
     document.getElementById("paciente").insertAdjacentHTML('beforeend', nomeInput.value);
-
 })
 
 
