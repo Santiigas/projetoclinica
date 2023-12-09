@@ -127,6 +127,27 @@ button:hover{
     background-color:#37da88
 }
 
+#agendarButton{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color:#40f99b;
+    color: #f5fbef;
+    font-weight: 700;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+#agendarButton:hover{
+    width: 190px;
+    height: 40px;
+    border-radius: 5px;
+    background-color:#37da88
+}
+
+
+
 .dados_entrada{
     padding-top: 10px;
     display: flex;

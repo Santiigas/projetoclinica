@@ -39,7 +39,7 @@ form.addEventListener('submit', (event) =>{
         alertaNaTela('Nome precisa ser preenchido!');
         return;
     }
-    
+    /*
     const dataNascimentoInputValue = dataNascimentoInput.value.replace(/\/|-/g,"").trim();
     if(dataNascimentoInputValue === ""){ 
         alertaNaTela('Data precisa ser preenchida!');
@@ -65,7 +65,7 @@ form.addEventListener('submit', (event) =>{
         alertaNaTela('Numero vazio ou invalido')
         return;
     }
-    
+    */
     let pacientes = new Array();
     //verifica se a propiedade no localstorage
     if (localStorage.hasOwnProperty("pacientes")){
@@ -81,8 +81,11 @@ form.addEventListener('submit', (event) =>{
     //salva no localstorage
     localStorage.setItem("pacientes",JSON.stringify(pacientes))
 
+    //envio do for e redirecionamento
     form.submit();
-
+    setTimeout(function() {
+        window.location.href = "/pages/confirmado.html";
+    }, 10); // Pode ajustar esse valor se necessário
 
     //envia dados para o html
     document.getElementById("paciente").insertAdjacentHTML('beforeend', nomeInput.value);
