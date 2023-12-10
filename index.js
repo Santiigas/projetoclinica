@@ -83,12 +83,9 @@ form.addEventListener('submit', (event) =>{
 
     //envio do for e redirecionamento
     form.submit();
-    setTimeout(function() {
-        window.location.href = "/pages/confirmado.html";
-    }, 10); // Pode ajustar esse valor se necessário
-
+    window.location.href = "/pages/confirmado.html";
     //envia dados para o html
-    document.getElementById("paciente").insertAdjacentHTML('beforeend', nomeInput.value);
+    document.getElementById("teste").insertAdjacentHTML('beforeend', nomeInput.value);
 })
 
 
@@ -101,6 +98,7 @@ const sexta = document.querySelector()
 const sabado = document.querySelector()
 
 segunda.addEventListener('click', function(event){
+    alert('santi')
     const dia = 'Segunda'
     const horario = '13:00'
 })
