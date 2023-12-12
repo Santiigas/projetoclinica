@@ -85,7 +85,6 @@ form.addEventListener('submit', (event) =>{
     form.submit();
     window.location.href = "/pages/confirmado.html";
     //envia dados para o html
-    document.getElementById("teste").insertAdjacentHTML('beforeend', nomeInput.value);
 })
 
 
