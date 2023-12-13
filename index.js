@@ -75,17 +75,25 @@ form.addEventListener('submit', (event) =>{
     }
 
     //add um novo obejeto no arry criado
-    pacientes.push({nome: nomeInput.value, datanascimento: dataNascimentoInput.value, 
-        sexo: sexoInput.value, cpf: cpfInput.value, telefone: telefoneInput.value});
+    pacientes.push({
+        nome: nomeInput.value, 
+        datanascimento: dataNascimentoInput.value, 
+        sexo: sexoInput.value, 
+        cpf: cpfInput.value, 
+        telefone: telefoneInput.value
+    });
     
     //salva no localstorage
     localStorage.setItem("pacientes",JSON.stringify(pacientes))
 
     //envio do for e redirecionamento
     form.submit();
-    window.location.href = "/pages/confirmado.html";
-    //envia dados para o html
+    window.location.href = "/pages/confirmado.html"
+
 })
+
+const dadostelapaciente = [nomeInput.value, dataNascimentoInput.value, cpfInput.value, telefoneInput.value];
+export default dadostelapaciente;
 
 
 //informacoes data
