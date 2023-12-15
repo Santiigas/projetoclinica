@@ -92,8 +92,11 @@ form.addEventListener('submit', (event) =>{
 
 })
 
-const dadostelapaciente = [nomeInput.value, dataNascimentoInput.value, cpfInput.value, telefoneInput.value];
-export default dadostelapaciente;
+
+export function dados(){
+    const dadostelapaciente = [nomeInput.value, dataNascimentoInput.value, cpfInput.value, telefoneInput.value];
+    return dadostelapaciente;
+}
 
 
 //informacoes data

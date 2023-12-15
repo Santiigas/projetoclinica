@@ -1,6 +1,7 @@
-import {dadostelapaciente} from '../index.js';
+import { dados } from '../index.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('brasill')
-    document.getElementById("paciente").innerHTML = dadostelapaciente[0];
+    alert('eu')
+    const dadosDoPaciente = dados();
+    document.getElementById("paciente").innerHTML = dadosDoPaciente.join('<br>');
 });
