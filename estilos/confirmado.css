@@ -167,6 +167,8 @@ h2{
     font-weight: 800;
     color: #ffffff;
     transition: 205ms;
+
+    text-transform: uppercase;
 }
 
 .valor{

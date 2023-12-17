@@ -1,19 +1,31 @@
-// import { dados } from '../index.js';
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const nome = dados[0]
-//     console.log(nome)
-//     document.getElementById("paciente").innerHTML = nome;
-// });
+
 
 
 
 function obterDadosDaUrl() {
-    let urlParams = new URLSearchParams(window.location.search);
-    let dados = urlParams.get("dados");
+    let dados =  JSON.parse(localStorage.getItem("pacientes"));
     console.log(dados);
+    return dados[dados.length - 1];
 }
 
 
+function exibirDados(){
+    const dadosPaciente = obterDadosDaUrl();
+    console.log(dadosPaciente)
 
-obterDadosDaUrl();
+    const nomeElement = document.getElementById("paciente");
+    const cpfeDataElement = document.getElementById("nascimentoCpf");
+    const telefoneElement =  document.getElementById("telefone");
+    const dataElement =  document.getElementById("data");
+    const data = dadosPaciente.dataAgendamento;
+
+    nomeElement.innerHTML = dadosPaciente.nome;
+    cpfeDataElement.textContent = `Nasc: ${dadosPaciente.datanascimento} | CPF: ${dadosPaciente.cpf}`;
+    telefoneElement.textContent = `Tel: ${dadosPaciente.telefone}`
+    dataElement.textContent = `${data.dia} dia 18/12 as ${data.horario}`
+
+}
+
+
+exibirDados();

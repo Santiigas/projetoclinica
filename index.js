@@ -1,6 +1,8 @@
 import {validaCPF,validaData,validaNome} from './Modulo.js/validacaodedados.js'
 import {MascaraData, MascaraCPF, MascaraTelefone} from './Modulo.js/mascaras.js'
 
+
+
 //informações do paciente
 const form = document.querySelector("#form")
 const nomeInput = document.querySelector('#name')
@@ -32,14 +34,14 @@ function alertaNaTela(mensagem){
 }
 
 //verificacao dos dados dos formulario
-form.addEventListener('submit', (event) =>{
+form.addEventListener('submit', (event) => {
     event.preventDefault();
     
     if(validaNome(nomeInput.value) === false){
         alertaNaTela('Nome precisa ser preenchido!');
         return;
     }
-    /*
+    
     const dataNascimentoInputValue = dataNascimentoInput.value.replace(/\/|-/g,"").trim();
     if(dataNascimentoInputValue === ""){ 
         alertaNaTela('Data precisa ser preenchida!');
@@ -65,7 +67,7 @@ form.addEventListener('submit', (event) =>{
         alertaNaTela('Numero vazio ou invalido')
         return;
     }
-    */
+    
     let pacientes = new Array();
     //verifica se a propiedade no localstorage
     if (localStorage.hasOwnProperty("pacientes")){
@@ -74,70 +76,37 @@ form.addEventListener('submit', (event) =>{
         pacientes = JSON.parse(localStorage.getItem("pacientes"))
     }
 
+
+
     //add um novo obejeto no arry criado
+    let data = obterDataAgendamento();
     let paciente = {
         nome: nomeInput.value, 
         datanascimento: dataNascimentoInput.value, 
         sexo: sexoInput.value, 
         cpf: cpfInput.value, 
-        telefone: telefoneInput.value
+        telefone: telefoneInput.value,
+        dataAgendamento : data
     }
     pacientes.push(paciente);
     
     //salva no localstorage
     localStorage.setItem("pacientes",JSON.stringify(pacientes))
-    let encodedData = encodeURIComponent(paciente);
     
 
     //envio do for e redirecionamento
-    window.location.href = "/pages/confirmado.html" + encodedData;
 
     form.submit();
+    window.location.href = "/pages/confirmado.html";
 
 })
 
 
-export function dados(){
-    const dadostelapaciente = [nomeInput.value, dataNascimentoInput.value, cpfInput.value, telefoneInput.value];
-    return dadostelapaciente;
+
+function obterDataAgendamento() {
+    let date =  JSON.parse(localStorage.getItem("datas"));
+    return date;
 }
 
-
-//informacoes data
-const segunda = document.querySelector()
-const terca = document.querySelector()
-const quarta = document.querySelector()
-const quinta = document.querySelector()
-const sexta = document.querySelector()
-const sabado = document.querySelector()
-
-segunda.addEventListener('click', function(event){
-    alert('santi')
-    const dia = 'Segunda'
-    const horario = '13:00'
-})
-
-terca.addEventListener('click', function(event){
-    const dia = 'Terca'
-    const horario = '13:00'
-})
-
-quarta.addEventListener('click', function(event){
-    const dia = 'Quarta'
-    const horario = '13:00'
-})
-
-quinta.addEventListener('click', function(event){
-    const dia = 'Quinta'
-    const horario = '08:00'
-})
-
-sexta.addEventListener('click', function(event){
-    const dia = 'Sexta'
-    const horario = '08:00'
-})
-
-sabado.addEventListener('click', function(event){
-    const dia = 'Sabado'
-    const horario = '08:00'
-})
+console.log("oi")
+obterDataAgendamento();
