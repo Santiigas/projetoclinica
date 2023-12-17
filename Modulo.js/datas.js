@@ -1,5 +1,3 @@
-
-
 //informacoes data
 const segunda = document.getElementById("segunda")
 const terca = document.getElementById("terca")
@@ -60,8 +58,6 @@ sabado.addEventListener('click', () => {
     exportDate
     exportDate(date);
 })
-
-
 
 function exportDate(date) {
     localStorage.setItem("datas",JSON.stringify(date))

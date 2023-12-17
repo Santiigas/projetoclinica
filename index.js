@@ -2,7 +2,6 @@ import {validaCPF,validaData,validaNome} from './Modulo.js/validacaodedados.js'
 import {MascaraData, MascaraCPF, MascaraTelefone} from './Modulo.js/mascaras.js'
 
 
-
 //informações do paciente
 const form = document.querySelector("#form")
 const nomeInput = document.querySelector('#name')
@@ -76,8 +75,6 @@ form.addEventListener('submit', (event) => {
         pacientes = JSON.parse(localStorage.getItem("pacientes"))
     }
 
-
-
     //add um novo obejeto no arry criado
     let data = obterDataAgendamento();
     let paciente = {
@@ -93,20 +90,14 @@ form.addEventListener('submit', (event) => {
     //salva no localstorage
     localStorage.setItem("pacientes",JSON.stringify(pacientes))
     
-
     //envio do for e redirecionamento
-
     form.submit();
     window.location.href = "/pages/confirmado.html";
-
 })
-
-
 
 function obterDataAgendamento() {
     let date =  JSON.parse(localStorage.getItem("datas"));
     return date;
 }
 
-console.log("oi")
 obterDataAgendamento();
