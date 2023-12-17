@@ -75,20 +75,24 @@ form.addEventListener('submit', (event) =>{
     }
 
     //add um novo obejeto no arry criado
-    pacientes.push({
+    let paciente = {
         nome: nomeInput.value, 
         datanascimento: dataNascimentoInput.value, 
         sexo: sexoInput.value, 
         cpf: cpfInput.value, 
         telefone: telefoneInput.value
-    });
+    }
+    pacientes.push(paciente);
     
     //salva no localstorage
     localStorage.setItem("pacientes",JSON.stringify(pacientes))
+    let encodedData = encodeURIComponent(paciente);
+    
 
     //envio do for e redirecionamento
+    window.location.href = "/pages/confirmado.html" + encodedData;
+
     form.submit();
-    window.location.href = "/pages/confirmado.html"
 
 })
 
