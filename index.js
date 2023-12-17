@@ -21,7 +21,7 @@ function CriaParagrafos () {
     return p;
 }
 
-//funcao que mostra a mensagem na tela
+//mostrar a mensagem na tela
 function alertaNaTela(mensagem){
     const mensagem_na_tela = document.querySelector('#alerta')
     mensagem_na_tela.innerHTML= '';
@@ -30,6 +30,30 @@ function alertaNaTela(mensagem){
 
     p.innerHTML = mensagem
     mensagem_na_tela.appendChild(p)
+}
+
+//gerar numeros 
+function gerarProtocolo(){
+    let min = 10000
+    let max = 99999
+    let numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+    return numeroAleatorio
+}
+
+function dataAtual(){
+    const data = new Date();
+    const dataAtual = data.toLocaleDateString();
+
+    return dataAtual
+}
+
+function horaAtual(){
+    const data = new Date();
+    const horas = data.getHours();
+    const minutos = data.getMinutes();
+    const segundos = data.getSeconds();
+
+    return `${horas}` + ":" + `${minutos}` + ":" + `${segundos}`
 }
 
 //verificacao dos dados dos formulario
@@ -83,7 +107,10 @@ form.addEventListener('submit', (event) => {
         sexo: sexoInput.value, 
         cpf: cpfInput.value, 
         telefone: telefoneInput.value,
-        dataAgendamento : data
+        dataAgendamento : data,
+        dataAtual : dataAtual(),
+        horaAtual: horaAtual(),
+        protocolo: gerarProtocolo(),
     }
     pacientes.push(paciente);
     
