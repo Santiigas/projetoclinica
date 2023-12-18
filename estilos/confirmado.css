@@ -174,7 +174,6 @@ h2{
     font-weight: 800;
     color: #ffffff;
     transition: 205ms;
-
     text-transform: uppercase;
 }
 
@@ -219,4 +218,29 @@ h2{
     background-color: #40f99b;
     width:338px;
     height: 3px;
+}
+
+.espacamento{
+    padding-top: 20px;
+}
+
+.imprimir{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #40f99b;
+    width:160px;
+    height: 43px;
+    border-radius:12px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    transition: 205ms;
+    cursor: pointer;
+}
+
+.imprimir:hover{
+    width:190px;
+    cursor: pointer;
 }
