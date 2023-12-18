@@ -18,7 +18,7 @@ function exibirDados(){
     nomeElement.innerHTML = dadosPaciente.nome;
     cpfeDataElement.textContent = `Nasc: ${dadosPaciente.datanascimento} | CPF: ${dadosPaciente.cpf}`;
     telefoneElement.textContent = `Tel: ${dadosPaciente.telefone}`
-    dataElement.textContent = `${data.dia} dia 18/12 as ${data.horario}`
+    dataElement.textContent = `${data.dia} dia ${data.data} as ${data.horario}`
     protocoloedata.textContent = "Protocolo:" + " " + `${dadosPaciente.protocolo}` + " | Data:" + `${dadosPaciente.dataAtual}` + " as " + `${dadosPaciente.horaAtual}`
 }
 
